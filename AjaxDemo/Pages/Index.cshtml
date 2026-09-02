@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+<h1>Приветствие</h1>
+<label for="name">Введите имя: </label>
+<input id="name" type="text" placeholder="Ваше имя">
+<br><br>
+
+<label for="age">Введите возраст: </label>
+<input id="age" type="text" placeholder="Ваш возраст">
+<br><br>
+
+<label for="city">Введите город: </label>
+<input id="city" type="text" placeholder="Ваш город">
+<br><br>
+
+<select id="profession">
+    <option value="programmer">Программист</option>
+    <option value="designer">Дизайнер</option>
+    <option value="marketing">Маркетолог</option>
+</select>
+<br><br>
+
+<button onclick="sayHello()">Отправить данные</button>
+
+<p id="result"></p>
+
+<script>
+    const sayHello = async () => {
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const city = document.getElementById("city").value;
+        const profession = document.getElementById("profession").value;
+
+        const resultElement = document.getElementById("result");
+
+        try {
+            const url = `?handler=Hello&name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}&city=${encodeURIComponent(city)}&profession=${encodeURIComponent(profession)}`;
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error("Ошибка сервера (код " + response.status + ")");
+            }
+        
+            const data = await response.json();
+            resultElement.textContent = data.message;
+        
+        } catch (error) {
+            console.error("Ошибка: ", error);
+            resultElement.textContent = "Ошибка при запросе: " + error.message;
+        }
+    }
+</script>
+
