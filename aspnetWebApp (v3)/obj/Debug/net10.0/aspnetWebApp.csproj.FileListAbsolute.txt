@@ -313,7 +313,6 @@ C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\scopedcss\bundle\aspnetWebApp.styles.css
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\scopedcss\projectbundle\aspnetWebApp.bundle.scp.css
-C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\compressed\2v9ug8irji-{0}-kuasdkgmv4-kuasdkgmv4.gz
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\compressed\ewtddk668o-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\compressed\gpfv6wmni9-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\compressed\vy8v8igqa2-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -387,3 +386,4 @@ C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\aspnetWebApp.pdb
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\aspnetWebApp.genruntimeconfig.cache
 C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\ref\aspnetWebApp.dll
+C:\Users\106010109\Documents\GitHub\ASP.NET AJAX\aspnetWebApp (v3)\obj\Debug\net10.0\compressed\2v9ug8irji-{0}-8pg4nucuu5-8pg4nucuu5.gz
