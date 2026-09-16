@@ -170,5 +170,8 @@
         resultDiv.style.whiteSpace = "pre-line";
 
         button.textContent = "Анкета успешно отправлена";
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        button.textContent = "Отправить";
     });
 </script>
