@@ -1,6 +1,42 @@
+import { useState } from "react";
 import Post from "./Post";
 
 function ProfileCard() {
+
+  const [posts, setPosts] = useState([
+    { id: 1,
+      author: "Andrey",
+      title: "Study react for frontend",
+      text: "Какой-то текст"
+    },
+    { id: 2,
+      author: "Andrey",
+      title: "Backend developers",
+      text: "Какой-то текст"
+    },
+    { id: 3,
+      author: "Andrey",
+      title: "Design system",
+      text: "Какой-то текст"
+    }
+  ])
+
+  const [title, setTitle] = useState('');
+  const [text, setText] = useState("");
+
+  function addPost(event){
+    event.preventDefault();
+    const newPost = {
+      id: Date.now(),
+      title: title, 
+      text: text,
+      author: "Andrey"
+    }
+    setPosts([...posts, newPost]);
+    setTitle("");
+    setText("");
+  }
+
   return (
     <section className="profile-card">
       <div className="profile">
@@ -11,20 +47,33 @@ function ProfileCard() {
         </div>
       </div>
 
-      <Post author="Andrey" title="Title for post 1" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos placeat, numquam excepturi suscipit magni illo voluptatibus illum voluptatem, voluptates aperiam, corporis fugiat itaque error praesentium! Quis vel aliquam harum facere."/>
-      <hr />
+      <form className="post-form" onSubmit={addPost}>
+        <input
+          type="text"
+          placeholder="Заголовок"
+          value={title}
+          onChange={(event)=>setTitle(event.target.value)}
+        />
+        <textarea 
+          placeholder="Текст для поста" 
+          value={text}
+          onChange={(event)=>setText(event.target.value)}>
+        </textarea>
+        
+        <button type="submit">
+          Опубликовать
+        </button>
 
-      <Post author="Andrey" title="Title for post 2" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos placeat, numquam excepturi suscipit magni illo voluptatibus illum voluptatem, voluptates aperiam, corporis fugiat itaque error praesentium!"/>
-      <hr />
+      </form>
 
-      <Post author="Andrey" title="Title for post 3" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos placeat, numquam excepturi suscipit magni illo voluptatibus illum voluptatem, voluptates aperiam"/>
-      <hr />
-
-      <Post author="Andrey" title="Title for post 4" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos placeat, numquam excepturi suscipit magni illo voluptatibus illum voluptatem"/>
-      <hr />
-
-      <Post author="Andrey" title="Title for post 5" text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos placeat, numquam excepturi suscipit magni"/>
-
+      {posts.map((post) => (
+        <Post
+        key={post.id}
+        author={post.author}
+        title={post.title}
+        text={post.text}
+        />
+      ))}
     </section>
   )
 }

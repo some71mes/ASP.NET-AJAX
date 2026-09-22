@@ -1,0 +1,3 @@
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+
+Открыть папку vite-project перед запуском
