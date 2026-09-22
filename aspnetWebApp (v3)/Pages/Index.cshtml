@@ -1,5 +1,12 @@
 ﻿@page
 @model IndexModel
+@* @{
+    Layout = null;
+    } *@
+
+@* @{
+    ViewData["Title"] = "Home page";
+    } *@
 
 <div class="form-container">
 
@@ -27,23 +34,11 @@
         </div>
 
         <div class="form-group">
-            <label for="city">Город:</label>
-            <select name="City" id="city" required>
-                <option value="">Выберите город</option>
-                <option value="Москва">Москва</option>
-                <option value="Санкт-Петербург">Санкт-Петербург</option>
-                <option value="Казань">Казань</option>
-                <option value="Екатеринбург">Екатеринбург</option>
-                <option value="Сочи">Сочи</option>
-            </select>
-        </div>
-
-        <div class="form-group">
             <label>Специальность:</label>
 
             <div class="speciality">
 
-                <input type="radio" name="Speciality" value="Программирование" id="dev" required>
+                <input type="radio" name="Speciality" value="Программирование" id="dev">
                 <label for="dev">Программирование</label>
 
                 <br>
@@ -58,7 +53,6 @@
 
             </div>
         </div>
-
         <div class="form-group">
             <label for="courses">Курс:</label>
             <select name="Course" id="courses">
@@ -68,110 +62,113 @@
                 <option value="4 курс">4 курс</option>
             </select>
         </div>
-
         <div class="form-group">
-            <label>Формат обучения:</label>
-
-            <div class="speciality">
-                <input type="radio" name="StudyFormat" value="Очно" id="fulltime" required>
-                <label for="fulltime">Очно</label>
-
-                <br>
-
-                <input type="radio" name="StudyFormat" value="Заочно" id="parttime">
-                <label for="parttime">Заочно</label>
-
-                <br>
-
-                <input type="radio" name="StudyFormat" value="Дистанционно" id="distance">
-                <label for="distance">Дистанционно</label>
-            </div>
+            <label for="">Дата рождения:</label>
+            <input type="date" name="BirthDate" required>
         </div>
-
         <div class="form-group">
-            <label for="birthDate">Дата рождения:</label>
-            <input type="date" name="BirthDate" id="birthDate" required>
-        </div>
-
-        <div class="form-group">
-            <label>Технологии:</label>
-
+            <label for="">Технологии:</label>
             <div class="speciality">
                 <input type="checkbox" name="Technologies" value="HTML/CSS" id="html">
                 <label for="html">HTML/CSS</label>
-
                 <br>
-
                 <input type="checkbox" name="Technologies" value="JavaScript" id="js">
                 <label for="js">JavaScript</label>
-
                 <br>
-
                 <input type="checkbox" name="Technologies" value="C#" id="csharp">
                 <label for="csharp">C#</label>
-
                 <br>
-
                 <input type="checkbox" name="Technologies" value="Python" id="python">
                 <label for="python">Python</label>
             </div>
         </div>
-        
-        <div class="form-group">
-            <label for="about">Информация о себе:</label>
-            <br/>
-            <textarea name="About" id="about" placeholder="Расскажите о себе"></textarea>
-        </div>
-
         <button class="form-button" type="submit">
             Отправить
         </button>
 
     </form>
 
-    <div id="result" class="result">
-        @if (Model.Message != null)
-        {
-            <div class="result">
-                <h3>Данные анкеты:</h3>
+    @* <h1>Расширить анкету. Добавить:</h1>
+    <h2>1. Выбор города через select</h2>
+    <h2>2. Выбор основного языка программирования</h2>
+    <h2>3. Формат обучения (очно, заочно, дистанционное)</h2>
+    <h2>4. Инфомация о себе через тег textarea</h2>
+    <h2>5. Дополнить список технологий</h2> *@
 
-                <p style="white-space: pre-line;">
-                    @Model.Message
-                </p>
+    <div id="result" class="student-card">
+        
+        <div class="student-card-header">
+            <h2>Анкета отправлена</h2>
+            <p>Данные студента</p>
+        </div>
+        
+        <div class="student-info">
+            <div class="info-item">
+                <span>Имя</span>
+                <strong id="result-name"></strong>
             </div>
-        }
+            <div class="info-item">
+                <span>Телефон</span>
+                <strong id="result-phone"></strong>
+            </div>
+            <div class="info-item">
+                <span>Email</span>
+                <strong id="result-email"></strong>
+            </div>
+            <div class="info-item">
+                <span>Специальность</span>
+                <strong id="result-speciality"></strong>
+            </div>
+            <div class="info-item">
+                <span>Курс</span>
+                <strong id="result-course"></strong>
+            </div>
+            <div class="info-item">
+                <span>Дата рождения</span>
+                <strong id="result-birthdate"></strong>
+            </div>
+            <div class="info-item">
+                <span>Технологии</span>
+                <strong id="result-technologies"></strong>
+            </div>
+        </div>
+    
     </div>
+
+    @if (Model.Message != null)
+    {
+        <div class="result">
+            <h3>Данные анкеты:</h3>
+
+            <p style="white-space: pre-line;">
+                @Model.Message
+            </p>
+        </div>
+    }
 
 </div>
 
 <script>
     const form = document.querySelector("form");
-    const button = form.querySelector("button");
-    const resultDiv = document.querySelector("#result");
 
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
+        const button = form.querySelector("button");
+        button.textContent = "Отправка..."
+        button.disabled = true;
+
         const formData = new FormData(form);
-
-        button.textContent = "Отправка...";
-
         const response = await fetch("", {
             method: "POST",
             body: formData
         });
 
-        const result = await response.text();
-        console.log(button);
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        console.log(button);
-
-        resultDiv.textContent = result;
-        resultDiv.style.whiteSpace = "pre-line";
-
-        button.textContent = "Анкета успешно отправлена";
+        const data = await response.json();
+        @* console.log(result); *@
         await new Promise(resolve => setTimeout(resolve, 1500));
-
-        button.textContent = "Отправить";
-    });
+        document.querySelector("#result").textContent = data;
+        button.disabled = false;
+        button.textContent = "Анкета успешно отправлена :P";
+    })
 </script>
