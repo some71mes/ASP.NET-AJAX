@@ -44,6 +44,7 @@ public class IndexModel : PageModel
         {
             Name,
             Phone,
+            Email,
             Speciality,
             Course,
             BirthDate,

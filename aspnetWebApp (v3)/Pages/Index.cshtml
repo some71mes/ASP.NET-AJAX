@@ -1,12 +1,5 @@
 ﻿@page
 @model IndexModel
-@* @{
-    Layout = null;
-    } *@
-
-@* @{
-    ViewData["Title"] = "Home page";
-    } *@
 
 <div class="form-container">
 
@@ -37,22 +30,17 @@
             <label>Специальность:</label>
 
             <div class="speciality">
-
                 <input type="radio" name="Speciality" value="Программирование" id="dev">
                 <label for="dev">Программирование</label>
-
                 <br>
-
                 <input type="radio" name="Speciality" value="Дизайн" id="design">
                 <label for="design">Дизайн</label>
-
                 <br>
-
                 <input type="radio" name="Speciality" value="Маркетинг" id="marketing">
                 <label for="marketing">Маркетинг</label>
-
             </div>
         </div>
+
         <div class="form-group">
             <label for="courses">Курс:</label>
             <select name="Course" id="courses">
@@ -62,10 +50,12 @@
                 <option value="4 курс">4 курс</option>
             </select>
         </div>
+
         <div class="form-group">
             <label for="">Дата рождения:</label>
             <input type="date" name="BirthDate" required>
         </div>
+
         <div class="form-group">
             <label for="">Технологии:</label>
             <div class="speciality">
@@ -82,26 +72,20 @@
                 <label for="python">Python</label>
             </div>
         </div>
+
         <button class="form-button" type="submit">
             Отправить
         </button>
 
     </form>
 
-    @* <h1>Расширить анкету. Добавить:</h1>
-    <h2>1. Выбор города через select</h2>
-    <h2>2. Выбор основного языка программирования</h2>
-    <h2>3. Формат обучения (очно, заочно, дистанционное)</h2>
-    <h2>4. Инфомация о себе через тег textarea</h2>
-    <h2>5. Дополнить список технологий</h2> *@
+    <div id="result" class="student-card" style="display: none;">
 
-    <div id="result" class="student-card">
-        
         <div class="student-card-header">
             <h2>Анкета отправлена</h2>
             <p>Данные студента</p>
         </div>
-        
+
         <div class="student-info">
             <div class="info-item">
                 <span>Имя</span>
@@ -132,19 +116,8 @@
                 <strong id="result-technologies"></strong>
             </div>
         </div>
-    
+
     </div>
-
-    @if (Model.Message != null)
-    {
-        <div class="result">
-            <h3>Данные анкеты:</h3>
-
-            <p style="white-space: pre-line;">
-                @Model.Message
-            </p>
-        </div>
-    }
 
 </div>
 
@@ -155,20 +128,33 @@
         event.preventDefault();
 
         const button = form.querySelector("button");
-        button.textContent = "Отправка..."
+        const originalText = button.textContent;
+
+        button.textContent = "Отправка...";
         button.disabled = true;
 
         const formData = new FormData(form);
+
         const response = await fetch("", {
             method: "POST",
             body: formData
         });
 
         const data = await response.json();
-        @* console.log(result); *@
+
         await new Promise(resolve => setTimeout(resolve, 1500));
-        document.querySelector("#result").textContent = data;
+
+        document.getElementById("result-name").textContent = data.Name || "—";
+        document.getElementById("result-phone").textContent = data.Phone || "—";
+        document.getElementById("result-email").textContent = data.Email || "—";
+        document.getElementById("result-speciality").textContent = data.Speciality || "—";
+        document.getElementById("result-course").textContent = data.Course || "—";
+        document.getElementById("result-birthdate").textContent = data.BirthDate || "—";
+        document.getElementById("result-technologies").textContent = data.Technologies || "—";
+
+        document.getElementById("result").style.display = "block";
+
         button.disabled = false;
         button.textContent = "Анкета успешно отправлена :P";
-    })
+    });
 </script>
