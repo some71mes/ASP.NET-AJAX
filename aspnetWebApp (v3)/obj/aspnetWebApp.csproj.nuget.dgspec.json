@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET-AJAX\\aspnetWebApp (v3)\\aspnetWebApp.csproj": {}
+    "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET AJAX\\aspnetWebApp (v3)\\aspnetWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET-AJAX\\aspnetWebApp (v3)\\aspnetWebApp.csproj": {
+    "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET AJAX\\aspnetWebApp (v3)\\aspnetWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET-AJAX\\aspnetWebApp (v3)\\aspnetWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET AJAX\\aspnetWebApp (v3)\\aspnetWebApp.csproj",
         "projectName": "aspnetWebApp",
-        "projectPath": "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET-AJAX\\aspnetWebApp (v3)\\aspnetWebApp.csproj",
+        "projectPath": "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET AJAX\\aspnetWebApp (v3)\\aspnetWebApp.csproj",
         "packagesPath": "C:\\Users\\106010109\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET-AJAX\\aspnetWebApp (v3)\\obj\\",
+        "outputPath": "C:\\Users\\106010109\\Documents\\GitHub\\ASP.NET AJAX\\aspnetWebApp (v3)\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\106010109\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\106010109\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
