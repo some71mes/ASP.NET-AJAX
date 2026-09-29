@@ -70,6 +70,87 @@ main {
   color: #16171d;
 }
 
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.post-form input,
+.post-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #16171d;
+  background: #f9fafb;
+  outline: none;
+  transition: 0.2s;
+}
+
+.post-form input::placeholder,
+.post-form textarea::placeholder {
+  color: #6b7280;
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+  border-color: #16171d;
+  background: white;
+}
+
+.post-form textarea {
+  min-height: 100px;
+  resize: none;
+  line-height: 1.6;
+  field-sizing: content;
+}
+
+.post-form button[type="submit"] {
+  align-self: flex-end;
+  border: none;
+  background: #16171d;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-button {
+  margin-top: 12px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.delete-button:active {
+  opacity: 0.7;
+}
+
+.post-form button[type="submit"]:hover {
+  background: #16171d;
+  transform: translateY(-2px);
+}
+
 .post {
   text-align: left;
   margin-top: 25px;

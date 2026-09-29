@@ -1,3 +1,7 @@
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 
 Открыть папку vite-project перед запуском
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+cd vite-project
+npm run dev

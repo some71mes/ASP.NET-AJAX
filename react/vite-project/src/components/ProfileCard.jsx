@@ -4,37 +4,46 @@ import Post from "./Post";
 function ProfileCard() {
 
   const [posts, setPosts] = useState([
-    { id: 1,
+    {
+      id: 1,
       author: "Andrey",
       title: "Study react for frontend",
       text: "Какой-то текст"
     },
-    { id: 2,
+    {
+      id: 2,
       author: "Andrey",
       title: "Backend developers",
       text: "Какой-то текст"
     },
-    { id: 3,
+    {
+      id: 3,
       author: "Andrey",
       title: "Design system",
       text: "Какой-то текст"
     }
-  ])
+  ]);
 
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
   const [text, setText] = useState("");
 
-  function addPost(event){
+  function addPost(event) {
     event.preventDefault();
+
     const newPost = {
       id: Date.now(),
-      title: title, 
+      title: title,
       text: text,
       author: "Andrey"
-    }
+    };
+
     setPosts([...posts, newPost]);
     setTitle("");
     setText("");
+  }
+
+  function deletePost(id) {
+    setPosts(posts.filter((post) => post.id !== id));
   }
 
   return (
@@ -52,30 +61,36 @@ function ProfileCard() {
           type="text"
           placeholder="Заголовок"
           value={title}
-          onChange={(event)=>setTitle(event.target.value)}
+          onChange={(event) => setTitle(event.target.value)}
         />
-        <textarea 
-          placeholder="Текст для поста" 
+
+        <textarea
+          placeholder="Текст для поста"
           value={text}
-          onChange={(event)=>setText(event.target.value)}>
-        </textarea>
-        
+          onChange={(event) => setText(event.target.value)}
+        />
+
         <button type="submit">
           Опубликовать
         </button>
-
       </form>
 
-      {posts.map((post) => (
-        <Post
-        key={post.id}
-        author={post.author}
-        title={post.title}
-        text={post.text}
-        />
-      ))}
+      {posts.length > 0 ? (
+        posts.map((post) => (
+          <Post
+            key={post.id}
+            id={post.id}
+            author={post.author}
+            title={post.title}
+            text={post.text}
+            onDelete={deletePost}
+          />
+        ))
+      ) : (
+        <p className="empty-message">Опубликуйте первый пост</p>
+      )}
     </section>
-  )
+  );
 }
 
 export default ProfileCard;
