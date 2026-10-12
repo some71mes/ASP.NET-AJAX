@@ -1,4 +1,0 @@
-winget install Microsoft.DotNet.SDK.10
-
-потом проверяем версию dotnet --version
-и запускаем dotnet run/watch

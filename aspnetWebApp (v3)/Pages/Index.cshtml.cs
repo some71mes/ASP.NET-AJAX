@@ -1,26 +1,28 @@
-using System.Text.Json;
+// using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using aspnetWebApp.Models;
 
 namespace aspnetWebApp.Pages;
 
 public class IndexModel : PageModel
 {
     [BindProperty]
-    public string Name { get; set; }
+    public required string Name { get; set; }
     [BindProperty]
-    public string Phone { get; set; }
+    public required string Phone { get; set; }
     [BindProperty]
-    public string Email { get; set; }
+    public required string Email { get; set; }
     [BindProperty]
-    public string Speciality { get; set; }
+    public required string Speciality { get; set; }
     [BindProperty]
-    public string Course { get; set; }
+    public required string Course { get; set; }
     [BindProperty]
-    public string BirthDate { get; set; }
+    public required string BirthDate { get; set; }
     [BindProperty]
     public string[] Technologies { get; set; } = Array.Empty<string>();
-    public string Message { get; set; }
+    public static List<Student> Students { get; set; } = new();
+    public required string Message { get; set; }
     public void OnGet()
     {
         // Message = "Привет! Сообщение от C#";
@@ -40,20 +42,38 @@ public class IndexModel : PageModel
         //         $"Дата рождения: {BirthDate}\n" +
         //         $"Технологии: {technologies}";
 
-        var student = new
+        var student = new Student
         {
-            Name,
-            Phone,
-            Email,
-            Speciality,
-            Course,
-            BirthDate,
-            Technologies
+            Id = Students.Any() ? Students.Max(x => x.Id) + 1 : 1,
+            Name = Name,
+            Phone = Phone,
+            Email = Email,
+            Speciality = Speciality,
+            Course = Course,
+            BirthDate = BirthDate,
+            Technologies = Technologies
         };
 
-        return Content(
-            JsonSerializer.Serialize(student), 
-            "application/json"
-        );
+        Students.Add(student);
+
+        return new JsonResult(student);
+    }
+
+    public IActionResult OnGetStudents() {
+        return new JsonResult(Students);
+    }
+
+    public IActionResult OnPostDelete(int id) {
+        var student = Students.FirstOrDefault(x => x.Id == id);
+        if (student == null) {
+            return new JsonResult(new{
+                success = false,
+                message = "Студент не найден"
+            });
+        }
+        Students.Remove(student);
+        return new JsonResult(new{
+            success = true
+        });
     }
 }
