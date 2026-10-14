@@ -56,7 +56,7 @@ function ProfileCard() {
                 </div>
                 <div className="profile-info">
                     <h2>Андрей</h2>
-                    <p>@andrey</p>
+                    <p>@blatnoi_ferz'</p>
                 </div>
             </div>
             <p className="profile-description">

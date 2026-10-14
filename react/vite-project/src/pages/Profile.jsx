@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProfileCard from "../components/ProfileCard";
 import Post from "../components/Post";
 
@@ -14,6 +14,11 @@ function Profile() {
 
     const [title, setTitle] = useState('');
     const [text, setText] = useState("");
+
+    useEffect(() => {
+        console.log("Количство постов: ", posts.length);
+    }, [posts]
+    );
 
     function addPost(event) {
         event.preventDefault();
