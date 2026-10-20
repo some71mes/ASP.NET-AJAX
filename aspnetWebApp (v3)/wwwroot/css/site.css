@@ -109,6 +109,226 @@ body {
     } 
 }
 
+/* ГЛАВНАЯ СТРАНИЦА */
+.home-page, .resumes-page{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+.home-hero{
+    background-color: #191919;
+    color: white;
+    border-radius: 24px;
+    padding: 70px 45px;
+}
+
+.home-label{
+    color: #171717;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.home-hero h1{
+    margin: 20px 0;
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+.home-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.home-button{
+    display: inline-block;
+    padding: 13px 20px;
+    border: 1px solid #171717;
+    border-radius: 10px;
+    background:#fff;
+    color: #171717;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.home-button:hover{
+    opacity: 0.85;
+}
+
+.home-button-secondary{
+    border-color: #777;
+    background: transparent;
+    color: white;
+}
+
+.home-features{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.home-feature{
+    padding: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    background: white;
+}
+
+.home-feature h2{
+    font-size: 18px;
+}
+
+.home-feature p{
+    color: #666;
+    line-height: 1.6;
+}
+
+/* КАТАЛОГ РЕЗЮМЕ */
+.resumes-page {
+    padding-top: 40px;
+}
+
+.resumes-heading .home-label {
+    margin: 0 0 8px;
+}
+
+.resumes-heading h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+.resumes-heading > div > p:not(.home-label) {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.resumes-count {
+    font-size: 14px;
+}
+
+.resumes-empty {
+    padding: 40px 24px;
+    border: 1px dashed #d8d8d8;
+    border-radius: 16px;
+    background: #fff;
+    text-align: center;
+}
+
+.resumes-empty h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.resumes-empty a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #3563e9;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.resumes-empty a:hover {
+    text-decoration: underline;
+}
+
+.resumes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.resume-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.resume-card:hover {
+    border-color: #d5dbea;
+    box-shadow: 0 8px 24px rgba(23, 23, 23, 0.06);
+}
+
+.resume-card h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.resume-card p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.resume-card .resume-speciality {
+    color: #3563e9;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.resume-details {
+    display: grid;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+}
+
+.resume-details p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.resume-details strong {
+    color: #171717;
+}
+
+@media (max-width: 900px) {
+    .resumes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .resumes-page {
+        padding-top: 28px;
+    }
+
+    .resumes-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .resumes-heading .home-button {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .resumes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 /* ФОРМА */
 .form-container {
     max-width: 500px;
