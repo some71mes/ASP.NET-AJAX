@@ -1,24 +1,25 @@
 // import { useState } from "react";
 // import Post from "./Post";
 import avatar from "../assets/logo.png";
+import { useUser } from "../context/UserContext";
 
 function ProfileCard() {
     // const [posts, setPosts] = useState([
     //     {
     //         id: 1,
-    //         author: 'andrey',
+    //         author: 'Viktor',
     //         title: 'Study React for frontend',
     //         text: "какой-то осмысленный текст"
     //     },
     //     {
     //         id: 2,
-    //         author: 'andrey',
+    //         author: 'Alex',
     //         title: 'Backend developers',
     //         text: "какой-то осмысленный текст"
     //     },
     //     {
     //         id: 3,
-    //         author: 'andrey',
+    //         author: 'Michael',
     //         title: 'Design system',
     //         text: "какой-то осмысленный текст"
     //     },
@@ -34,7 +35,7 @@ function ProfileCard() {
     //         id: Date.now(),
     //         title: title,
     //         text: text,
-    //         author: "Andrey"
+    //         author: "Viktor"
     //     }
 
     //     setPosts([...posts, newPost]);
@@ -47,6 +48,7 @@ function ProfileCard() {
     //         posts.filter((post) => post.id !== id
     //         ));
     // }
+    const { userName } = useUser();
 
     return (
         <section className="profile-card">
@@ -55,12 +57,12 @@ function ProfileCard() {
                     <img src={avatar} alt="" />
                 </div>
                 <div className="profile-info">
-                    <h2>Андрей</h2>
-                    <p>@blatnoi_ferz'</p>
+                    <h2>{userName}</h2>
+                    <p>@nickname</p>
                 </div>
             </div>
             <p className="profile-description">
-                React developer
+                Frontend developer on React ✔
             </p>
             
             {/* <img src="../assets/logo.png" alt="" /> */}

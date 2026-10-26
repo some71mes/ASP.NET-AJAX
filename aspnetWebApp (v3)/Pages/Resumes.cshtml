@@ -5,7 +5,7 @@
     <div class="resumes-heading">
         <div>
             <p class="home-label">
-                Andrey
+                COLLEGEJOB
             </p>
             <h1>Каталог резюме</h1>
             <p>Знакомься со специалистами
@@ -23,14 +23,18 @@
         @Model.Students.Count
     </p>
 
-    @if(Model.Students.Count == 0){
-        <div class="resumes-empty">
+    @if (Model.Students.Count == 0)
+    {
+        <div class="resume-empty">
             <h2>Пока нет резюме</h2>
-            <a asp-page="/CreateResume"> Создать первое резюме</a>
+            <p>Стань первым - заполни анкету</p>
+            <a asp-page="/CreateResume">Создать первое резюме</a>
         </div>
-    }else {
+    }
+    else
+    {
         <div class="resumes-grid">
-            @foreach(var student in Model.Students)
+            @foreach (var student in Model.Students)
             {
                 <article class="resume-card">
                     <p class="resume-speciality">
@@ -44,19 +48,21 @@
                             @student.Email
                         </p>
                         <p>
-                            <strong>Phone:</strong>
+                            <strong>Телефон:</strong>
                             @student.Phone
                         </p>
                         <p>
                             <strong>Технологии:</strong>
-                            @(student.Technologies.Length > 0 ? 
+                            @(student.Technologies.Length > 0 ?
                             string.Join(", ", student.Technologies)
-                            :"Не указаны")
+                            : "Не указаны")
                         </p>
                     </div>
+                    <a class="resume-details-button" asp-page="/Resume"
+                    asp-route-id="@student.Id">Подробнее</a>
                 </article>
             }
-
         </div>
     }
+
 </div>

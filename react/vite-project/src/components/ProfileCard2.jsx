@@ -5,21 +5,21 @@ function ProfileCard() {
     const [posts, setPosts] = useState([
         {
             id: 1,
-            title: "Моё первое React-приложение",
+            title: "Моё первое React-приложение 🚀",
             text: "Сегодня я изучаю React, компоненты и useState.",
-            author: "Андрей"
+            author: "Виктор"
         },
         {
             id: 2,
             title: "Изучаем props",
             text: "Props позволяют передавать данные между компонентами.",
-            author: "Саша"
+            author: "Алексей"
         },
         {
             id: 3,
             title: "React становится интереснее",
             text: "Постепенно собираем настоящее приложение.",
-            author: "Кирилл"
+            author: "Мария"
         }
     ]);
 
@@ -33,7 +33,7 @@ function ProfileCard() {
             id: Date.now(),
             title: title,
             text: text,
-            author: "Андрей"
+            author: "Виктор"
         };
 
         setPosts([...posts, newPost]);
@@ -49,8 +49,8 @@ function ProfileCard() {
                 <div className="avatar">V</div>
 
                 <div className="profile-info">
-                    <h2>Андрей</h2>
-                    <p>@blatnoi_ferz'</p>
+                    <h2>Виктор</h2>
+                    <p>@victor_react</p>
                 </div>
             </div>
 
