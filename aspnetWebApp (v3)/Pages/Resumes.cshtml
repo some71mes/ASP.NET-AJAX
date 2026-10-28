@@ -5,7 +5,7 @@
     <div class="resumes-heading">
         <div>
             <p class="home-label">
-                Andrey
+                COLLEGEJOB
             </p>
             <h1>Каталог резюме</h1>
             <p>Знакомься со специалистами
@@ -17,6 +17,30 @@
             Создать резюме
         </a>
     </div>
+
+    <form method="get" class="resume-search-form">
+        <div class="search-field">
+            <label for="search">Имя кандидата</label>
+            <input type="text" id="search" name="search" 
+            value="@Model.Search" placeholder="Иван" class="border-0"/>
+        </div>
+        <div class="search-field">
+            <label for="specialityFilter">Специальность</label>
+            <select name="specialityFilter" id="specialityFilter">
+                <option value="">Все специальности</option>
+                @foreach (var speciality in Model.Specialities)
+                {
+                      <option value="@speciality"
+                       selected="@(Model.SpecialityFilter == speciality)">
+                       @speciality</option>
+                    }
+            </select>
+        </div>
+        <div class="search-actions">
+            <button type="submit" class="home-button">Найти резюме</button>
+            <a asp-page="/Resumes" class="search-reset">Сбросить</a>
+        </div>
+    </form>
 
     <p class="resumes-count">
         Всего резюме:
