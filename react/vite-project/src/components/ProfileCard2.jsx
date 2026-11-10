@@ -7,19 +7,19 @@ function ProfileCard() {
             id: 1,
             title: "Моё первое React-приложение 🚀",
             text: "Сегодня я изучаю React, компоненты и useState.",
-            author: "Виктор"
+            author: "Андрей"
         },
         {
             id: 2,
             title: "Изучаем props",
             text: "Props позволяют передавать данные между компонентами.",
-            author: "Алексей"
+            author: "Андрей"
         },
         {
             id: 3,
             title: "React становится интереснее",
             text: "Постепенно собираем настоящее приложение.",
-            author: "Мария"
+            author: "Андрей"
         }
     ]);
 
@@ -33,7 +33,7 @@ function ProfileCard() {
             id: Date.now(),
             title: title,
             text: text,
-            author: "Виктор"
+            author: "Андрей"
         };
 
         setPosts([...posts, newPost]);
@@ -49,8 +49,8 @@ function ProfileCard() {
                 <div className="avatar">V</div>
 
                 <div className="profile-info">
-                    <h2>Виктор</h2>
-                    <p>@victor_react</p>
+                    <h2>Андрей</h2>
+                    <p>@andrey</p>
                 </div>
             </div>
 

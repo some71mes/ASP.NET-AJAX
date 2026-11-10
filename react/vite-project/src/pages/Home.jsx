@@ -5,19 +5,19 @@ function Home() {
     // const posts = [
     //     {
     //         id: 1,
-    //         author: 'Viktor',
+    //         author: 'Andrey',
     //         title: 'Study React for frontend',
     //         text: "какой-то осмысленный текст"
     //     },
     //     {
     //         id: 2,
-    //         author: 'Alex',
+    //         author: 'Andrey',
     //         title: 'Backend developers',
     //         text: "какой-то осмысленный текст"
     //     },
     //     {
     //         id: 3,
-    //         author: 'Michael',
+    //         author: 'Andrey',
     //         title: 'Design system',
     //         text: "какой-то осмысленный текст"
     //     },

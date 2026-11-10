@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const UserContext = createContext();
 
 export function UserProvider({children}) {
-    const [userName, setUserName] = useState('Viktor');
+    const [userName, setUserName] = useState('Andrey');
     const [avatar, setAvatar] = useState(() => {
         return localStorage.getItem("avatar") || "";
     });

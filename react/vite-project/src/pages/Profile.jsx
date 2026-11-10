@@ -14,7 +14,7 @@ function Profile() {
     //     return [
     //         {
     //             id: 1,
-    //             author: 'Viktor',
+    //             author: 'Andrey',
     //             title: 'Study React for frontend',
     //             text: "какой-то осмысленный текст"
     //         },

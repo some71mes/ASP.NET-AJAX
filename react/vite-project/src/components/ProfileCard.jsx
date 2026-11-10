@@ -7,7 +7,7 @@ function ProfileCard() {
     // const [posts, setPosts] = useState([
     //     {
     //         id: 1,
-    //         author: 'Viktor',
+    //         author: 'andrey',
     //         title: 'Study React for frontend',
     //         text: "какой-то осмысленный текст"
     //     },
@@ -35,7 +35,7 @@ function ProfileCard() {
     //         id: Date.now(),
     //         title: title,
     //         text: text,
-    //         author: "Viktor"
+    //         author: "andrey"
     //     }
 
     //     setPosts([...posts, newPost]);
@@ -64,11 +64,11 @@ function ProfileCard() {
                 </div>
                 <div className="profile-info">
                     <h2>{userName}</h2>
-                    <p>@nickname</p>
+                    <p>@andrewmyname</p>
                 </div>
             </div>
             <p className="profile-description">
-                Frontend developer on React ✔
+                developer
             </p>
 
             {/* <div className="profile-avatar">
